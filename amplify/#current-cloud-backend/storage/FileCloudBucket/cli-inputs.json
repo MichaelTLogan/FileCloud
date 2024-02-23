@@ -1,0 +1,14 @@
+{
+  "resourceName": "FileCloudBucket",
+  "policyUUID": "95cf2e8b",
+  "bucketName": "fileclouded1f0322e7704cf79d0e517c1436e51d",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

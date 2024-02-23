@@ -14,6 +14,12 @@
     "categories": {
       "auth": {
         "filecloud622960b0": {}
+      },
+      "api": {
+        "filecloud": {}
+      },
+      "storage": {
+        "FileCloudBucket": {}
       }
     }
   }

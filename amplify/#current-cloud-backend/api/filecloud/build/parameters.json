@@ -1,0 +1,7 @@
+{
+    "AppSyncApiName": "filecloud",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "S3DeploymentBucket": "amplify-amplifyd9b86b68c2ab4-staging-182714-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/d804055cb0595a8ee1f0acafe51cd8297f7f8151"
+}
