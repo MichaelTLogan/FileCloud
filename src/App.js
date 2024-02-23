@@ -3,6 +3,9 @@ import "./App.css";
 import "@aws-amplify/ui-react/styles.css";
 import { generateClient } from 'aws-amplify/api';
 import { uploadData, getUrl, remove } from 'aws-amplify/storage';
+
+import { Storage } from 'aws-amplify';
+
 import {
   Button,
   Flex,
@@ -37,8 +40,10 @@ const App = ({ signOut }) => {
     await Promise.all(
       notesFromAPI.map(async (note) => {
         if (note.image) {
-          const url = await getUrl(note.name);
-          note.image = url;
+          // problem
+          const url = await getUrl({ key: note.name });
+          console.log(url);
+          note.image = url.url.href;
         }
         return note;
       })
@@ -56,9 +61,12 @@ const App = ({ signOut }) => {
       image: image.name,
     };
     console.log('No image file selected');
-    if (!!data.image) 
-      if (image instanceof File) 
-        await uploadData(data.name, image);
+    if (!!data.image)
+      if (image instanceof Blob)
+        await uploadData({
+          key: data.name,
+          data: image
+        });
     const client = generateClient();
     await client.graphql({
       query: createNoteMutation,
@@ -71,7 +79,7 @@ const App = ({ signOut }) => {
   async function deleteNote({ id, name }) {
     const newNotes = notes.filter((note) => note.id !== id);
     setNotes(newNotes);
-    await remove(name);
+    await remove({key: name});
     const client = generateClient();
     await client.graphql({
       query: deleteNoteMutation,
