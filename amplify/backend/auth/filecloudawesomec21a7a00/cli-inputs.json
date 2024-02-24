@@ -1,10 +1,10 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "filecloud622960b0_identitypool_622960b0",
+    "identityPoolName": "filecloudawesomec21a7a00_identitypool_c21a7a00",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "filecl622960b0",
-    "userPoolName": "filecloud622960b0_userpool_622960b0",
+    "resourceNameTruncated": "fileclc21a7a00",
+    "userPoolName": "filecloudawesomec21a7a00_userpool_c21a7a00",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -31,10 +31,10 @@
     "userpoolClientReadAttributes": [
       "email"
     ],
-    "userpoolClientLambdaRole": "filecl622960b0_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "fileclc21a7a00_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "622960b0",
-    "resourceName": "filecloud622960b0",
+    "sharedId": "c21a7a00",
+    "resourceName": "filecloudawesomec21a7a00",
     "authSelections": "identityPoolAndUserPool",
     "useDefault": "default",
     "userPoolGroupList": [],

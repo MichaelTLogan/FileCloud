@@ -1,25 +1,25 @@
 {
-  "staging": {
+  "main": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-amplifyd9b86b68c2ab4-staging-182714-authRole",
-      "UnauthRoleArn": "arn:aws:iam::557159822036:role/amplify-amplifyd9b86b68c2ab4-staging-182714-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::557159822036:role/amplify-amplifyd9b86b68c2ab4-staging-182714-authRole",
+      "AuthRoleName": "amplify-filecloud-main-05955-authRole",
+      "UnauthRoleArn": "arn:aws:iam::557159822036:role/amplify-filecloud-main-05955-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::557159822036:role/amplify-filecloud-main-05955-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-amplifyd9b86b68c2ab4-staging-182714-deployment",
-      "UnauthRoleName": "amplify-amplifyd9b86b68c2ab4-staging-182714-unauthRole",
-      "StackName": "amplify-amplifyd9b86b68c2ab4-staging-182714",
-      "StackId": "arn:aws:cloudformation:us-east-1:557159822036:stack/amplify-amplifyd9b86b68c2ab4-staging-182714/2ad238c0-d279-11ee-83ac-0a56fb3673c9",
-      "AmplifyAppId": "d2hpmljkg8zy8m"
+      "DeploymentBucketName": "amplify-filecloud-main-05955-deployment",
+      "UnauthRoleName": "amplify-filecloud-main-05955-unauthRole",
+      "StackName": "amplify-filecloud-main-05955",
+      "StackId": "arn:aws:cloudformation:us-east-1:557159822036:stack/amplify-filecloud-main-05955/0669fb30-d2b0-11ee-ae29-0ae6eba7a895",
+      "AmplifyAppId": "d2ilbo73as2y89"
     },
     "categories": {
-      "auth": {
-        "filecloud622960b0": {}
+      "storage": {
+        "FileCloudBucket": {}
       },
       "api": {
         "filecloud": {}
       },
-      "storage": {
-        "FileCloudBucket": {}
+      "auth": {
+        "filecloudawesomec21a7a00": {}
       }
     }
   }

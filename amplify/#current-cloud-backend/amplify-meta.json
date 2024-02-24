@@ -1,19 +1,46 @@
 {
   "providers": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-amplifyd9b86b68c2ab4-staging-182714-authRole",
-      "UnauthRoleArn": "arn:aws:iam::557159822036:role/amplify-amplifyd9b86b68c2ab4-staging-182714-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::557159822036:role/amplify-amplifyd9b86b68c2ab4-staging-182714-authRole",
+      "AuthRoleName": "amplify-filecloud-main-05955-authRole",
+      "UnauthRoleArn": "arn:aws:iam::557159822036:role/amplify-filecloud-main-05955-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::557159822036:role/amplify-filecloud-main-05955-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-amplifyd9b86b68c2ab4-staging-182714-deployment",
-      "UnauthRoleName": "amplify-amplifyd9b86b68c2ab4-staging-182714-unauthRole",
-      "StackName": "amplify-amplifyd9b86b68c2ab4-staging-182714",
-      "StackId": "arn:aws:cloudformation:us-east-1:557159822036:stack/amplify-amplifyd9b86b68c2ab4-staging-182714/2ad238c0-d279-11ee-83ac-0a56fb3673c9",
-      "AmplifyAppId": "d2hpmljkg8zy8m"
+      "DeploymentBucketName": "amplify-filecloud-main-05955-deployment",
+      "UnauthRoleName": "amplify-filecloud-main-05955-unauthRole",
+      "StackName": "amplify-filecloud-main-05955",
+      "StackId": "arn:aws:cloudformation:us-east-1:557159822036:stack/amplify-filecloud-main-05955/0669fb30-d2b0-11ee-ae29-0ae6eba7a895",
+      "AmplifyAppId": "d2ilbo73as2y89"
+    }
+  },
+  "api": {
+    "filecloud": {
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [],
+          "defaultAuthentication": {
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7
+            },
+            "authenticationType": "API_KEY"
+          }
+        },
+        "GraphQLAPIIdOutput": "ai6tovwg4bcjhhtqgicn7op6qi",
+        "GraphQLAPIEndpointOutput": "https://kk7yvnx4qfcglger2cgc2h26ki.appsync-api.us-east-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-byn5sgenpzerxi2ifvqrcfjwhq"
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-filecloud-main-05955-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apifilecloud"
+      },
+      "lastPushTimeStamp": "2024-02-24T02:05:29.695Z",
+      "lastPushDirHash": "I2ZU8KzSzLFbc1ZwzH3khVoyh4I="
     }
   },
   "auth": {
-    "filecloud622960b0": {
+    "filecloudawesomec21a7a00": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -37,61 +64,34 @@
         ]
       },
       "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifyd9b86b68c2ab4-staging-182714-deployment/amplify-cfn-templates/auth/filecloud622960b0-cloudformation-template.json",
-        "logicalId": "authfilecloud622960b0"
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-filecloud-main-05955-deployment/amplify-cfn-templates/auth/filecloudawesomec21a7a00-cloudformation-template.json",
+        "logicalId": "authfilecloudawesomec21a7a00"
       },
-      "lastPushTimeStamp": "2024-02-23T20:06:24.362Z",
+      "lastPushTimeStamp": "2024-02-24T02:05:30.369Z",
       "output": {
-        "UserPoolId": "us-east-1_jnVdf6gut",
-        "AppClientIDWeb": "6a0hd4eecnqf9i7clin5248bno",
-        "AppClientID": "1ocfthvtarogd9f7dobj076kni",
-        "IdentityPoolId": "us-east-1:6f41a28c-39d8-4dde-8191-3fe9d94fad37",
-        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:557159822036:userpool/us-east-1_jnVdf6gut",
-        "IdentityPoolName": "filecloud622960b0_identitypool_622960b0__staging",
-        "UserPoolName": "filecloud622960b0_userpool_622960b0"
+        "UserPoolId": "us-east-1_T7D3byuLe",
+        "AppClientIDWeb": "3ohvi13iaar7iq6p73gkfqi0u7",
+        "AppClientID": "geg02ql6840pg0d62edn3pdh1",
+        "IdentityPoolId": "us-east-1:f357a7fe-9143-439e-aa60-54106b99171a",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:557159822036:userpool/us-east-1_T7D3byuLe",
+        "IdentityPoolName": "filecloudawesomec21a7a00_identitypool_c21a7a00__main",
+        "UserPoolName": "filecloudawesomec21a7a00_userpool_c21a7a00"
       },
-      "lastPushDirHash": "cipzN3SqLd9UTtnO07L86eqDb0k="
-    }
-  },
-  "api": {
-    "filecloud": {
-      "service": "AppSync",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [],
-      "output": {
-        "authConfig": {
-          "defaultAuthentication": {
-            "authenticationType": "API_KEY",
-            "apiKeyConfig": {
-              "apiKeyExpirationDays": 7
-            }
-          },
-          "additionalAuthenticationProviders": []
-        },
-        "GraphQLAPIIdOutput": "aexvv6uyf5av7katjkzo5pa3de",
-        "GraphQLAPIEndpointOutput": "https://mjr42c5ytzbctfulrx25j6yqpe.appsync-api.us-east-1.amazonaws.com/graphql",
-        "GraphQLAPIKeyOutput": "da2-dwusk6cwvfhchhgwaqvsgkuwfq"
-      },
-      "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifyd9b86b68c2ab4-staging-182714-deployment/amplify-cfn-templates/api/cloudformation-template.json",
-        "logicalId": "apifilecloud"
-      },
-      "lastPushTimeStamp": "2024-02-23T20:06:28.371Z",
-      "lastPushDirHash": "I2ZU8KzSzLFbc1ZwzH3khVoyh4I="
+      "lastPushDirHash": "JPXI3m/cIWFsgl8cIHZPZD46Cv8="
     }
   },
   "storage": {
     "FileCloudBucket": {
-      "service": "S3",
-      "providerPlugin": "awscloudformation",
       "dependsOn": [],
-      "lastPushTimeStamp": "2024-02-23T20:06:28.371Z",
+      "providerPlugin": "awscloudformation",
+      "service": "S3",
+      "lastPushTimeStamp": "2024-02-24T02:05:29.711Z",
       "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifyd9b86b68c2ab4-staging-182714-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-filecloud-main-05955-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
         "logicalId": "storageFileCloudBucket"
       },
       "output": {
-        "BucketName": "fileclouded1f0322e7704cf79d0e517c1436e51d182714-staging",
+        "BucketName": "fileclouded1f0322e7704cf79d0e517c1436e51d05955-main",
         "Region": "us-east-1"
       },
       "lastPushDirHash": "ghwcSi3NFa0YCcsWoeyRXS8OhQE="
