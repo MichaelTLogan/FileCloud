@@ -3,9 +3,6 @@ import "./App.css";
 import "@aws-amplify/ui-react/styles.css";
 import { generateClient } from 'aws-amplify/api';
 import { uploadData, getUrl, remove } from 'aws-amplify/storage';
-
-import { Storage } from 'aws-amplify';
-
 import {
   Button,
   Flex,
@@ -20,11 +17,7 @@ import { listNotes } from "./graphql/queries";
 import {
   createNote as createNoteMutation,
   deleteNote as deleteNoteMutation,
-  createTodo,
-  updateTodo,
-  deleteTodo
 } from "./graphql/mutations";
-import { listTodos } from './graphql/queries';
 
 const App = ({ signOut }) => {
   const [notes, setNotes] = useState([]);
@@ -40,7 +33,6 @@ const App = ({ signOut }) => {
     await Promise.all(
       notesFromAPI.map(async (note) => {
         if (note.image) {
-          // problem
           const url = await getUrl({ key: note.name });
           console.log(url);
           note.image = url.url.href;
