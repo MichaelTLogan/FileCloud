@@ -14,16 +14,21 @@ My build process is unfortunately quite un-involved. Some deployments have gone 
 # Viewing the project
 You can access the live deployment at the link I included in the assignment dropbox, although based on what I said before I would skip that and just build the project locally. Here's how you can do that:
 
-First of all, I did my development and testing on a VirtualBox Ubuntu 24.04 LTS VM
-    Nodejs version v18.19.1
-    npm version 9.2.0
+First of all, I did my development using the following:
+```
+Ubuntu 24.04 LTS Virtual Machine
+Nodejs version v18.19.1
+npm version 9.2.0
+```
 
 You will need nodejs, npm, and a couple packages from npm.
-
+```
 sudo apt update
 sudo apt install nodejs npm
 npm install aws-amplify @aws-amplify/ui-react
+```
 
 Once you've got these prerequisites you should be ready to go and run the following:
-
+```
 npm start
+```
