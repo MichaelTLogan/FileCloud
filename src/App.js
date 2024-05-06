@@ -27,20 +27,24 @@ const App = ({ signOut }) => {
   }, []);
 
   async function fetchNotes() {
-    const client = generateClient();
-    const apiData = await client.graphql({ query: listNotes });
-    const notesFromAPI = apiData.data.listNotes.items;
-    await Promise.all(
-      notesFromAPI.map(async (note) => {
-        if (note.image) {
-          const url = await getUrl({ key: note.name });
-          console.log(url);
-          note.image = url.url.href;
-        }
-        return note;
-      })
-    );
-    setNotes(notesFromAPI);
+    try {
+      const client = generateClient();
+      const apiData = await client.graphql({ query: listNotes });
+      const notesFromAPI = apiData.data.listNotes.items;
+      await Promise.all(
+        notesFromAPI.map(async (note) => {
+          if (note.image) {
+            const url = await getUrl({ key: note.name });
+            console.log(url);
+            note.image = url.url.href;
+          }
+          return note;
+        })
+      );
+      setNotes(notesFromAPI);
+    } catch (error) {
+      console.error("Error fetching notes:", error);
+    }
   }
 
   async function createNote(event) {
@@ -52,18 +56,36 @@ const App = ({ signOut }) => {
       description: form.get("description"),
       image: image.name,
     };
-    console.log('No image file selected');
-    if (!!data.image)
-      if (image instanceof Blob)
+  
+    // Validate image type
+    if (!!data.image) {
+      if (image instanceof Blob) {
+        const allowedExtensions = ["jpg", "jpeg", "png", "gif", "bmp"];
+        const fileType = image.type.split("/")[1]; // Get the file extension
+        if (!allowedExtensions.includes(fileType.toLowerCase())) {
+          console.error("Only image files (jpg, jpeg, png, gif, bmp) are allowed.");
+          return; // Stop further processing
+        }
+        // Upload the image data
         await uploadData({
           key: data.name,
-          data: image
+          data: image,
         });
+      }
+    } else {
+      console.log("No image file selected");
+    }
+  
     const client = generateClient();
-    await client.graphql({
-      query: createNoteMutation,
-      variables: { input: data },
-    });
+    if (!data.name || !data.description) {
+      console.error("Name and description are required.");
+    } else {
+      await client.graphql({
+        query: createNoteMutation,
+        variables: { input: data },
+      });
+    }
+  
     fetchNotes();
     event.target.reset();
   }
@@ -81,7 +103,7 @@ const App = ({ signOut }) => {
 
   return (
     <View className="App">
-      <Heading level={1}>My Notes App</Heading>
+      <Heading level={1}>FileCloud</Heading>
       <View as="form" margin="3rem 0" onSubmit={createNote}>
         <Flex direction="row" justifyContent="center">
           <TextField
